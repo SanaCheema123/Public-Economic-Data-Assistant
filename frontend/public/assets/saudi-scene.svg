@@ -1,0 +1,26 @@
+<svg width="1800" height="520" viewBox="0 0 1800 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sky" x1="900" y1="0" x2="900" y2="520" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FCF9F5"/><stop offset="1" stop-color="#F4E7DD"/>
+    </linearGradient>
+    <linearGradient id="dune" x1="0" y1="220" x2="1650" y2="520" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8EFE8"/><stop offset="1" stop-color="#E3D1C3"/>
+    </linearGradient>
+  </defs>
+  <rect width="1800" height="520" fill="url(#sky)"/>
+  <path d="M0 260C170 180 280 180 420 250C590 335 730 290 870 214C1040 122 1150 178 1295 246C1470 328 1610 264 1800 180V520H0V260Z" fill="#F8EFE9"/>
+  <path d="M0 340C190 242 370 290 520 362C676 437 830 390 1010 292C1172 204 1300 240 1430 315C1576 399 1688 380 1800 328V520H0V340Z" fill="url(#dune)"/>
+  <g opacity=".7" fill="#B79D8D">
+    <rect x="1340" y="176" width="38" height="180" rx="7"/><rect x="1394" y="225" width="42" height="131" rx="6"/><rect x="1450" y="200" width="34" height="156" rx="5"/><rect x="1494" y="246" width="46" height="110" rx="6"/>
+    <path d="M1552 356V124H1598V356H1552ZM1560 124L1575 72L1590 124H1560Z"/>
+    <rect x="1614" y="204" width="30" height="152" rx="5"/><rect x="1655" y="236" width="36" height="120" rx="5"/><rect x="1705" y="213" width="31" height="143" rx="5"/>
+  </g>
+  <g opacity=".55" fill="#8D6D59">
+    <path d="M116 362h10V264h-10v98Zm5-103c-34-31-54-17-65-5 26-2 39 7 54 26-34-12-52 1-60 14 30-6 46 0 65 19-28-2-41 13-45 28 24-13 40-14 51-3 14-14 31-12 53 2-4-17-17-31-43-30 22-19 39-24 68-17-9-16-28-28-64-14 15-17 30-24 55-21-14-15-35-28-69 3Z"/>
+    <path d="M1720 390h9V305h-9v85Zm4-90c-29-25-46-14-55-4 22-1 33 6 46 22-29-10-44 1-51 12 25-5 39 0 55 16-24-2-35 11-38 24 20-11 34-12 43-2 12-12 27-10 45 2-3-15-14-26-36-26 19-16 33-20 58-14-8-13-24-24-55-12 13-15 25-20 47-18-12-13-30-23-59 0Z"/>
+  </g>
+  <g opacity=".45" fill="#B39482">
+    <path d="M760 352C816 298 886 281 958 307C1027 332 1084 325 1134 280C1087 365 990 393 894 365C850 352 807 347 760 352Z"/>
+    <path d="M630 358C677 310 720 294 770 302C733 333 704 352 630 358Z"/>
+  </g>
+</svg>

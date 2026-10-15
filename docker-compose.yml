@@ -1,0 +1,73 @@
+services:
+  postgres:
+    image: pgvector/pgvector:pg17
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-peda}
+      POSTGRES_USER: ${POSTGRES_USER:-peda}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-peda_change_me}
+    volumes:
+      - peda_postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-peda} -d ${POSTGRES_DB:-peda}"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+    restart: unless-stopped
+
+  backend:
+    build: ./backend
+    environment:
+      ENVIRONMENT: ${ENVIRONMENT:-development}
+      DATABASE_URL: ${DATABASE_URL:-postgresql+psycopg://peda:peda_change_me@postgres:5432/peda}
+      JWT_SECRET: ${JWT_SECRET:-development-compose-secret-change-before-production}
+      FRONTEND_URL: ${FRONTEND_URL:-http://localhost:5173}
+      BACKEND_URL: ${BACKEND_URL:-http://localhost:8000}
+      AI_PROVIDER: ${AI_PROVIDER:-groq}
+      AI_MODE: ${AI_MODE:-live}
+      GROQ_API_KEY: ${GROQ_API_KEY:-}
+      GROQ_MODEL: ${GROQ_MODEL:-llama-3.3-70b-versatile}
+      GEMINI_API_KEY: ${GEMINI_API_KEY:-}
+      GEMINI_MODEL: ${GEMINI_MODEL:-gemini-2.0-flash}
+      DATA_MODE: ${DATA_MODE:-live}
+      DATA_SYNC_ON_STARTUP: ${DATA_SYNC_ON_STARTUP:-true}
+      DATA_BACKGROUND_REFRESH: ${DATA_BACKGROUND_REFRESH:-true}
+      DATA_REFRESH_HOURS: ${DATA_REFRESH_HOURS:-12}
+      LIVE_DATA_START_YEAR: ${LIVE_DATA_START_YEAR:-2000}
+      LIVE_DATA_COUNTRY: ${LIVE_DATA_COUNTRY:-SAU}
+      DATA_SYNC_TIMEOUT_SECONDS: ${DATA_SYNC_TIMEOUT_SECONDS:-20}
+      ACCESS_TOKEN_MINUTES: ${ACCESS_TOKEN_MINUTES:-30}
+      REFRESH_TOKEN_DAYS: ${REFRESH_TOKEN_DAYS:-7}
+      SQL_TIMEOUT_MS: ${SQL_TIMEOUT_MS:-3000}
+      SQL_ROW_LIMIT: ${SQL_ROW_LIMIT:-200}
+      RATE_LIMIT_PER_MINUTE: ${RATE_LIMIT_PER_MINUTE:-90}
+      MAX_REQUEST_BYTES: ${MAX_REQUEST_BYTES:-2097152}
+      AUTO_CREATE_TABLES: "false"
+      COOKIE_SECURE: ${COOKIE_SECURE:-false}
+      LOG_LEVEL: ${LOG_LEVEL:-INFO}
+      WEB_CONCURRENCY: ${WEB_CONCURRENCY:-1}
+    depends_on:
+      postgres:
+        condition: service_healthy
+    ports:
+      - "8000:8000"
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://localhost:8000/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        VITE_API_URL: ""
+    depends_on:
+      backend:
+        condition: service_healthy
+    ports:
+      - "5173:80"
+    restart: unless-stopped
+
+volumes:
+  peda_postgres:

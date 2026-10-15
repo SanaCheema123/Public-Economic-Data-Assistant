@@ -1,0 +1,31 @@
+Excited to share my latest AI-powered full-stack project: Public Economic Data Assistant 🇸🇦
+I recently developed a bilingual Public Economic Data Assistant designed to make Saudi Arabia’s economic and social data easier to explore, understand, and analyze.
+The platform allows users to ask questions in English or Arabic and receive structured, source-linked answers backed by verified public datasets.
+Some of the key capabilities include:
+- Arabic & English conversational interface
+- Live economic data integration
+- Natural-Language-to-SQL querying
+- Retrieval-Augmented Generation (RAG)
+- Source citations and dataset metadata
+- Interactive Plotly charts
+- Economic indicator explanations
+- Saved questions and research items
+- PDF & CSV report exports
+- RTL/LTR language support
+- Secure authentication and protected APIs
+- SQL validation and hallucination protection
+- Groq + Gemini AI provider support
+- PostgreSQL database integration
+- Docker-ready architecture
+One of the most important goals of this project was data reliability.
+Instead of allowing the AI to simply generate economic statistics from general model knowledge, the system retrieves data from trusted sources and attaches the relevant indicator, period, dataset, organization, and source link to the response.
+The application also includes protection against unsafe AI-generated SQL and unsupported answers, helping ensure that users receive grounded and traceable information.
+Technology Stack
+Frontend: React.js, TypeScript, Vite, Tailwind CSS, TanStack Query, Plotly.js
+Backend: FastAPI, Python, SQLAlchemy, PostgreSQL
+AI: Groq, Gemini, RAG, LangGraph, Natural-Language-to-SQL
+Infrastructure: Docker, PostgreSQL, pgvector
+This project gave me the opportunity to work across full-stack development, AI engineering, data engineering, UI/UX, security, and database architecture in one complete system.
+I’m especially interested in how AI can make complex public and economic datasets more accessible to students, researchers, journalists, analysts, and citizens.
+Would love to hear your feedback and ideas for improving the platform further.
+#ArtificialIntelligence #GenerativeAI #RAG #LangGraph #FastAPI #ReactJS #PostgreSQL #DataEngineering #DataAnalytics #MachineLearning #FullStackDevelopment #SaudiArabia #EconomicData #DataVisualization #AIEngineering #SoftwareEngineering #TypeScript #Python #Groq #GeminiAI
