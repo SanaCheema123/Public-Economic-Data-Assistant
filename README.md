@@ -1,5 +1,11 @@
 # Public Economic Data Assistant
 ## المساعد الذكي للبيانات الاقتصادية العامة
+<img width="959" height="437" alt="settings" src="https://github.com/user-attachments/assets/9bcf9b67-dcff-4825-a073-c2f4d9b40046" />
+<img width="959" height="443" alt="save" src="https://github.com/user-attachments/assets/eebf19b7-759b-403c-b3cc-4ced5e38d3ce" />
+<img width="959" height="438" alt="overveiw" src="https://github.com/user-attachments/assets/9a0cc5b6-6945-4fb1-9462-5dc1adcd3a38" />
+<img width="959" height="435" alt="landing" src="https://github.com/user-attachments/assets/3c3c58d8-18fb-47fc-9b56-3e9e16c9d42c" />
+<img width="959" height="440" alt="insight" src="https://github.com/user-attachments/assets/102a752c-d0ef-419b-b111-6b44fb2db8a5" />
+<img width="958" height="439" alt="ask" src="https://github.com/user-attachments/assets/f15b8372-a987-4368-84df-8d414ea1185d" />
 
 A bilingual, citation-first full-stack application for Saudi economic and social data. Runtime statistics come from upstream public sources; the application does **not** seed invented demo statistics.
 
